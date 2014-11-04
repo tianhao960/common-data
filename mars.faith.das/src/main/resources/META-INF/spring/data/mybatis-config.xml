@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+     <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+      "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="defaultExecutorType" value="REUSE" />
+		<setting name="lazyLoadingEnabled" value="true" />
+		<setting name="aggressiveLazyLoading" value="false" />
+		<setting name="cacheEnabled" value="false" />
+		<setting name="lazyLoadTriggerMethods" value="clone" />
+	</settings>
+	
+	<plugins>
+		<plugin interceptor="com.mars.faith.das.mybatis.plugin.TablesShardPlugin">
+			<property name="shardconfig" value="table_shard_config.xml"/>
+		</plugin>
+	</plugins>
+</configuration>
